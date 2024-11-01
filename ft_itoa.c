@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:26:42 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2024/10/30 20:02:37 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2024/11/01 18:03:29 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ char	*ft_itoa(int n)
 		num *= -1;
 		i++;
 	}
-	if (!(res = (char *)malloc(sizeof(char) * (i + 1))))
+	res = (char *)malloc(sizeof(char) * (i + 1));
+	if (!res)
 		return (NULL);
 	*(res + i) = 0;
 	while (i--)

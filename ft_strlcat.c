@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 16:53:08 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2024/10/30 20:01:13 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2024/11/01 21:06:58 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t s)
 	srcl = ft_strlen(src);
 	dstl = ft_strlen(dst);
 	if (s <= dstl)
-		return (s + src);
+		return (s + srcl);
 	i = 0;
 	j = dstl;
 	while ((i + j) < (s -1) && src[i] != '\0')
