@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:35:38 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2024/10/31 16:55:49 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2024/11/04 12:52:05 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	count_word(const char *str, char d)
 			i++;
 		if (str[i])
 			tt++;
-		while (str[i] && str[i] == d)
+		while (str[i] && str[i] != d)
 			i++;
 	}
 	return (tt);

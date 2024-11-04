@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:26:42 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2024/11/02 17:03:29 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2024/11/04 12:49:43 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,21 @@
 static size_t	get_d(int b)
 {
 	size_t	i;
+	size_t	buf;
 
-	i = 0;
-	while (b >= 0)
+	buf = b;
+	i = 1;
+	if (b < 0)
 	{
-		b /= 10;
+		buf = -buf;
 		i++;
 	}
-	return (i + 1);
+	while (buf / 10 > 0)
+	{
+		buf /= 10;
+		i++;
+	}
+	return (i);
 }
 
 char	*ft_itoa(int n)
@@ -33,21 +40,23 @@ char	*ft_itoa(int n)
 
 	num = n;
 	i = get_d(n);
-	if (n < 0)
-	{
-		num *= -1;
-		i++;
-	}
-	res = (char *)malloc(sizeof(char) * (i + 1));
+	res = (char *)malloc(i + 1);
 	if (!res)
 		return (NULL);
-	*(res + i) = 0;
-	while (i--)
+	if (num < 0)
 	{
-		*(res + i) = num % 10 + '0';
-		num /= 10;
+		res[0] = '-';
+		num = -num;
 	}
-	if (n < 0)
-		*(res + 0) = '-';
+	if (num == 0)
+		res[0] = '0';
+	res[i] = '\0';
+	i--;
+	while (i >= 0 && num > 0)
+	{
+		res[i] = (num % 10) + '0';
+		num /= 10;
+		i--;
+	}
 	return (res);
 }
