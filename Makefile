@@ -6,12 +6,10 @@
 #    By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 14:21:25 by gvon-ah-          #+#    #+#              #
-#    Updated: 2024/11/04 14:16:53 by gvon-ah-         ###   ########.fr        #
+#    Updated: 2024/11/04 19:09:47 by gvon-ah-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
        ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
@@ -21,21 +19,32 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	   ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 	   ft_striteri.c
 
+LST = ft_lstsize.c ft_lstadd_front.c ft_lstlast.c ft_lstnew.c
+
 OBJS = $(SRCS:%.c=%.o)
 
 NAME = libft.a
 
 COMPRESS = ar rcs
 
-RM: rm -f	
+CC = cc
+
+CFLAGS = -Wall -Wextra -Werror
+
+BONUS_OBJS = $(LST:.c=.o)
 
 all: $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 $(NAME): $(OBJS)
 	@$(COMPRESS) $(NAME) $(OBJS)
+
+bonus: $(BONUS_OBJS) $(NAME)
+	@$(COMPRESS) $(NAME) $(BONUS_OBJS)
+
+RM: rm -f	
 
 clean:
 	@$(RM) $(OBJS)
