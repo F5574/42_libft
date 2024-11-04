@@ -6,7 +6,7 @@
 #    By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 14:21:25 by gvon-ah-          #+#    #+#              #
-#    Updated: 2024/11/04 19:09:47 by gvon-ah-         ###   ########.fr        #
+#    Updated: 2024/11/04 19:29:48 by gvon-ah-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,9 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-BONUS_OBJS = $(LST:.c=.o)
+RM = rm -f	
+
+BONUS_OBJS = $(LST:.c=.o) $(SRCS:%.c=%.o)
 
 all: $(NAME)
 
@@ -44,10 +46,8 @@ $(NAME): $(OBJS)
 bonus: $(BONUS_OBJS) $(NAME)
 	@$(COMPRESS) $(NAME) $(BONUS_OBJS)
 
-RM: rm -f	
-
 clean:
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	@$(RM) $(NAME)
