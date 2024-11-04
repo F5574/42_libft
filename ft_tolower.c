@@ -6,15 +6,15 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:57:19 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2024/10/30 20:00:23 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2024/11/02 17:10:43 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	tolower(int c)
+int	ft_tolower(int c)
 {
-	if (c >= 97 && c <= 122)
+	if (c >= 65 && c <= 90)
 		c += 32;
 	return (c);
 }

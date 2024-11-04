@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:02:36 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2024/10/31 15:33:46 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2024/11/02 16:56:17 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	en;
 	size_t	cr;
 
+	st = 0;
+	cr = 0;
 	if (!s1)
 		return (NULL);
 	while (s1[st] && is_char(set, s1[st]))

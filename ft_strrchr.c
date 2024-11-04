@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 21:01:32 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2024/11/01 17:57:27 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2024/11/02 17:48:55 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *str, int c)
 	while (i >= 0)
 	{
 		if (str[i] == (char)c)
-			return ((char *)(str + 1));
+			return ((char *)(str + i));
 		i--;
 	}
 	return (NULL);

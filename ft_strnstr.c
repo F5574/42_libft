@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 16:43:25 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2024/11/01 18:03:02 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2024/11/02 18:03:01 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 
 	l1 = 0;
 	l2 = 0;
-	if (!to_find)
-		return ((char *)str);
 	while (str[l1] && l2 < len)
 	{
 		if (str[l1] == to_find[l2])
@@ -32,7 +30,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 				l2++;
 			}
 			if (l2 == ft_strlen(to_find))
-				return ((char *)&str[l1]);
+				return ((char *)str + l1);
 			l2 = 0;
 		}
 		l1++;

@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:26:42 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2024/11/01 18:03:29 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2024/11/02 17:03:29 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@ static size_t	get_d(int b)
 {
 	size_t	i;
 
-	i = 1;
-	while (b /= 10)
+	i = 0;
+	while (b >= 0)
+	{
+		b /= 10;
 		i++;
-	return (i);
+	}
+	return (i + 1);
 }
 
 char	*ft_itoa(int n)
