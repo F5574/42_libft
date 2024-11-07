@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:35:38 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2024/11/04 19:02:52 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2024/11/07 13:46:12 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	i = 0;
-	str = (char **)malloc((count_word(s, c) + 1) * sizeof(char *));
+	str = malloc((count_word(s, c) + 1) * sizeof(char *));
 	if (!str)
 		return (NULL);
 	while (*s)
@@ -82,6 +82,6 @@ char	**ft_split(char const *s, char c)
 		while (*s && *s != c)
 			s++;
 	}
-	str[i] = 0;
+	str[i] = '\0';
 	return (str);
 }
