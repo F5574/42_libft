@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 19:55:54 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2024/11/04 17:04:04 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:22:31 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <limits.h>
 
-size_t	ft_strlcpy(char *dst, char *src, unsigned int s);
+size_t	ft_strlcpy(char *dst, const char *src, size_t s);
 size_t	ft_strlen(const char *str);
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int a);

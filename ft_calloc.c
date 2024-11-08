@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 11:58:46 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2024/11/07 13:42:25 by gvon-ah-         ###   ########.fr       */
+/*   Created: 2024/11/07 16:08:09 by gvon-ah-          #+#    #+#             */
+/*   Updated: 2024/11/07 16:12:49 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*res;
+	size_t	ver;
 
-	if ((nmemb * size) / size != nmemb)
+	ver = nmemb * size;
+	if (size && (ver / size) != nmemb)
 		return (NULL);
 	res = malloc(nmemb * size);
 	if (!res)
